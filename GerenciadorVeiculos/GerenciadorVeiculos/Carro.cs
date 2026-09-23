@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GerenciadorVeiculos
+{
+    public class Carro : Veiculo
+    {
+        public int QuantidadePortas { get; set; }
+
+        public Carro(string modelo, decimal precoBase, int quantidadePortas)
+            :base(modelo, precoBase)
+        {
+            QuantidadePortas = quantidadePortas;
+        }
+
+        public override decimal CalcularValorSeguro()
+        {
+            return (PrecoBase * 0.03m) + (QuantidadePortas * 50.00m);
+            
+        }
+    }
+}
